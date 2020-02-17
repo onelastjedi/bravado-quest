@@ -11,6 +11,9 @@
       </div>
       <span v-html="highlight(user.email)" />
     </div>
+    <div class="card_btn">
+      Mark as suitable
+    </div>
   </div>
 </template>
 
@@ -33,12 +36,15 @@ export default {
 .card {
   display: grid;
   grid-template-columns: 134px 1fr;
-  height: 136px;
-  overflow: hidden;
+  grid-template-rows: 1fr auto;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
   background: #FAFAFA;
   margin-bottom: 21px;
+  grid-template-areas:
+            "a b b"
+            "a b b"
+            "a c c";
 
   h3 {
     font-size: 24px;
@@ -69,10 +75,25 @@ export default {
     padding: 10px 10px 10px 30px;
     display: grid;
     grid-template-columns: 1fr auto;
+    grid-area: b;
   }
 
   &_pic {
     background-color: rgba(0, 0, 0, 0.25);
+    grid-area: a;
+    display: grid;
+  }
+
+  &_btn {
+    grid-area: c;
+    color: #009688;
+    height: 40px;
+    line-height: 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-left: 40px;
+    font-size: 14px;
   }
 }
 </style>
