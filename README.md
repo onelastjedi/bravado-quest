@@ -2,7 +2,8 @@
 
 Check app online: https://bravado.now.sh/
 
-¯\_(ツ)_/¯
+¯\\\_(ツ)\_/¯
+
 I do not want to deploy the entire Rails application for a single API call. So, '/api/users' implemented using serverless function. 
 
 ## Layout design
