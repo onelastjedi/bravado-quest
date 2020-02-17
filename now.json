@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build"
+    },
+    { 
+      "src": "src/api/*.js", 
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    { 
+      "src": "/api/users", 
+      "dest": "src/api/users.js",
+      "headers": {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    {
+      "src": "/(js|css|img)/.*",
+      "headers": { "cache-control": "max-age=31536000, immutable" }
+    },
+    { "handle": "filesystem" },
+    { "src": ".*", "dest": "/" }
+  ]
+}
