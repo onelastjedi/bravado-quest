@@ -1,6 +1,6 @@
 # bravado-quest
 
-Check app online: https://bravado.now.sh/
+Check app online: https://bravado-quest.now.sh
 
 ¯\\\_(ツ)\_/¯
 
